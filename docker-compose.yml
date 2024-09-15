@@ -1,0 +1,16 @@
+
+version: '3'
+services: 
+  web:
+    image: ruddha/angel
+    ports:
+      - "80:80"
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_PASSWORD: example
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
